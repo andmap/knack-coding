@@ -1,8 +1,5 @@
 import express from "express";
-import { join } from "path";
-import fs, { readFileSync } from "fs";
-
-import { versions } from "process";
+import fs, { writeFileSync, readFileSync } from "fs";
 import { cleanUp } from "./helper.js";
 
 const app = express();
@@ -17,7 +14,7 @@ app.get("/cleanup", (req, res) => {
     readFileSync("./assets/mock_application.json", "utf-8")
   );
   const newData = cleanUp(data);
-  fs.writeFileSync("./assets/clean_application.json", JSON.stringify(newData));
+  writeFileSync("./assets/clean_application.json", JSON.stringify(newData));
   res.send("OK");
 });
 

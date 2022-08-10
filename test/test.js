@@ -1,4 +1,4 @@
-const cleanUp = require("../helper");
+import { cleanUp } from "../helper";
 
 test("simple test", () => {
   expect(
@@ -10,11 +10,11 @@ test("simple test", () => {
               {
                 fields: [
                   {
-                    _id: "61e869d51137bc002545fede",
+                    _id: "61e869d51137bc002545fede_duplicate",
                     key: "field_1",
                   },
                   {
-                    _id: "61e869d51137bc002545fede_duplicate",
+                    _id: "61e869d51137bc002545fede",
                     key: "field_1",
                   },
                 ],
@@ -34,5 +34,5 @@ test("simple test", () => {
         ],
       })
     )
-  ).toMatch(/61e869d51137bc002545fede_duplicate/);
+  ).not.toMatch(/61e869d51137bc002545fede_duplicate/);
 });
