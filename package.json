@@ -1,0 +1,18 @@
+{
+  "name": "clean-up",
+  "version": "1.0.0",
+  "description": "remove duplicated fields/objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Jun Wang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
